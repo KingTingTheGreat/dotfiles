@@ -23,7 +23,7 @@ mkcd() {
 gpr() {
     feature_branch=$(git rev-parse --abbrev-ref HEAD)
     git push --set-upstream origin $feature_branch
-    gh pr create --base main --head $feature_branch --title "$feature_branch"
+    gh pr create --base main --head $feature_branch --title "merge $feature_branch" --fill --web
 }
 
 eval "$(zoxide init --cmd cd bash)"
