@@ -23,7 +23,7 @@ mkcd() {
 gpr() {
     feature_branch=$(git rev-parse --abbrev-ref HEAD)
     git push --set-upstream origin $feature_branch
-    gh pr create --base main --head $feature_branch --title "merge $feature_branch" --fill --web
+    gh pr create --base main --head $feature_branch --fill --web
 }
 
 eval "$(zoxide init --cmd cd bash)"
@@ -34,3 +34,7 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 # alias winget='winpty winget'
 alias ghub='gh repo create --source=. --public && git push --set-upstream origin main'
 # alias fzf='winpty fzf'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
