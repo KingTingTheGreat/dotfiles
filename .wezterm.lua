@@ -13,7 +13,8 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback {'BlexMono Nerd Font Mono Text'}
-config.color_scheme = 'Thayer Bright'
+-- config.color_scheme = 'Thayer Bright'
+config.color_scheme = 'Aardvark Blue'
 
 config.window_decorations = "RESIZE"
 
@@ -24,7 +25,8 @@ config.default_prog = { "C:/Program Files/Git/bin/bash.exe" }
 --config.window_background_image = path .. '/boygenius-suits.png'
 --config.window_background_image = randImg()
 --config.window_background_image = os.excecute('./img.sh') .. '/boygenius-suits.png'
-config.window_background_image = 'C:/Users/jting/OneDrive/Pictures/Wallpapers/boygenius.jpg'
+-- config.window_background_image = 'C:/Users/jting/OneDrive/Pictures/Wallpapers/boygenius.jpg'
+config.window_background_image = "C:/Users/jting/OneDrive/Pictures/Wallpapers/the-rest.png"
 
 config.window_background_image_hsb = {
 	brightness = 0.3,
