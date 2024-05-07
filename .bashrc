@@ -39,6 +39,9 @@ alias ghub='gh repo create --source=. --public && git push --set-upstream origin
 alias ls='ls -F --color'
 alias tw-init='npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p'
 alias weather='~/.config/weather.exe'
+alias todo="/c/CompSciProjects/todo-cli/target/debug/todo-cli.exe"
+
+python ~/random_ascii.py
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

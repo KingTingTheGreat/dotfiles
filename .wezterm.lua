@@ -8,7 +8,8 @@ config.color_scheme = 'Aardvark Blue'
 
 config.window_decorations = "RESIZE"
 
-config.initial_cols = 100
+config.initial_cols = 120
+config.initial_rows= 30
 
 config.default_prog = { "C:/Program Files/Git/bin/bash.exe" }
 
