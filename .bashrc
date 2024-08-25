@@ -40,6 +40,12 @@ alias ls='ls -F --color'
 alias tw-init='npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p'
 alias weather='~/.config/weather.exe'
 alias todo="/c/CompSciProjects/todo-cli/target/debug/todo-cli.exe"
+alias nrd="node --run dev"
+alias paste='powershell -command "Get-Clipboard"'
+alias mkdir='mkdir -p'
+alias :q="exit"
+alias venv='python -m venv . && source Scripts/activate && printf "Include/\nLib/\nScripts/\npyvenv.cfg" >> .gitignore'
+alias pyvercel="printf '{\n\t\"builds\": [\n\t\t{\n\t\t\t\"src\": \"/app.py\",\n\t\t\t\"use\": \"@vercel/python\"\n\t\t}\n\t],\n\t\"routes\": [\n\t\t{\n\t\t\t\"src\": \"/(.*)\",\n\t\t\t\"dest\": \"/app.py\"\n\t\t}\n\t]\n}' > vercel.json"
 
 python ~/random_ascii.py
 
