@@ -26,6 +26,18 @@ gpr() {
     gh pr create --base main --head $feature_branch --fill --web
 }
 
+copyf () {
+	cat $1 | clip
+}
+
+webimg () {
+	curl -s "$1" | wezterm imgcat
+}
+
+info () {
+	fastfetch -l $(~/CompSciProjects/spotify-stats-cli/spotify-stats-cli.exe)
+}
+
 eval "$(zoxide init --cmd cd bash)"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
@@ -39,15 +51,19 @@ alias ghub='gh repo create --source=. --public && git push --set-upstream origin
 alias ls='ls -F --color'
 alias tw-init='npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p'
 alias weather='~/.config/weather.exe'
-alias todo="/c/CompSciProjects/todo-cli/target/debug/todo-cli.exe"
+alias todo="~/CompSciProjects/todo-cli/target/debug/todo-cli.exe"
 alias nrd="node --run dev"
 alias paste='powershell -command "Get-Clipboard"'
 alias mkdir='mkdir -p'
 alias :q="exit"
 alias venv='python -m venv . && source Scripts/activate && printf "Include/\nLib/\nScripts/\npyvenv.cfg" >> .gitignore'
 alias pyvercel="printf '{\n\t\"builds\": [\n\t\t{\n\t\t\t\"src\": \"/app.py\",\n\t\t\t\"use\": \"@vercel/python\"\n\t\t}\n\t],\n\t\"routes\": [\n\t\t{\n\t\t\t\"src\": \"/(.*)\",\n\t\t\t\"dest\": \"/app.py\"\n\t\t}\n\t]\n}' > vercel.json"
+alias mui="npm install @mui/material @emotion/react @emotion/styled"
+alias img="wezterm imgcat"
+alias ansi-img="~/CompSciProjects/image-ansi-converter/image-ansi-converter.exe"
 
-python ~/random_ascii.py
+# python ~/random_ascii.py
+info
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
