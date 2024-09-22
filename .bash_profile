@@ -1,3 +1,3 @@
-alias nvim='winpty nvim'
+# alias nvim='winpty nvim'
 
 source ~/.bashrc

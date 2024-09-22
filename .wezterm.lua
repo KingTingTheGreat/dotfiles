@@ -12,9 +12,9 @@ config.window_decorations = "RESIZE"
 config.initial_cols = 120
 config.initial_rows = 30
 
-config.default_prog = { "C:/Program Files/Git/bin/bash.exe" }
+-- config.default_prog = { "C:/Program Files/Git/bin/bash.exe" }
 
-config.window_background_image = "C:/Users/jting/OneDrive/Pictures/Wallpapers/the-rest.png"
+-- config.window_background_image = "C:/Users/jting/OneDrive/Pictures/Wallpapers/the-rest.png"
 
 config.window_background_image_hsb = {
 	brightness = 0.3,

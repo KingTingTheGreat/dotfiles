@@ -41,7 +41,10 @@ info () {
 eval "$(zoxide init --cmd cd bash)"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
-PS1='\[\033[94;1m\][\[\033[94;1m\]\d \t\[\033[94;1m\]] \[\033[32m\]\u \[\033[35m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n\$ '
+function git_branch() {
+	git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+}
+PS1='\[\033[94;1m\][\[\033[94;1m\]\d \t\[\033[94;1m\]] \[\033[32m\]\u \[\033[35m\]\w\[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
 
 # alias python='winpty python'
 # alias wsl='winpty wsl'
@@ -61,6 +64,8 @@ alias pyvercel="printf '{\n\t\"builds\": [\n\t\t{\n\t\t\t\"src\": \"/app.py\",\n
 alias mui="npm install @mui/material @emotion/react @emotion/styled"
 alias img="wezterm imgcat"
 alias ansi-img="~/CompSciProjects/image-ansi-converter/image-ansi-converter.exe"
+
+bind -s 'set completion-ignore-case on'
 
 # python ~/random_ascii.py
 info
