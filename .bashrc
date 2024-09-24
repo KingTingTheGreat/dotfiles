@@ -64,12 +64,20 @@ alias pyvercel="printf '{\n\t\"builds\": [\n\t\t{\n\t\t\t\"src\": \"/app.py\",\n
 alias mui="npm install @mui/material @emotion/react @emotion/styled"
 alias img="wezterm imgcat"
 alias ansi-img="~/CompSciProjects/image-ansi-converter/image-ansi-converter.exe"
+alias clip="xclip -sel clip"
+alias paste="xclip -o"
+alias air="~/go/bin/air"
 
 bind -s 'set completion-ignore-case on'
 
-# python ~/random_ascii.py
-info
+python ~/random_ascii.py
+# info
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"

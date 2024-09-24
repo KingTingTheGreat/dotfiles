@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font_with_fallback { 'BlexMono Nerd Font Mono Text' }
+config.font = wezterm.font_with_fallback { 'BlexMono Nerd Font Mono Medium' }
 -- config.line_height = 0.8
 -- config.color_scheme = 'Thayer Bright'
 config.color_scheme = 'Aardvark Blue'
@@ -14,7 +14,7 @@ config.initial_rows = 30
 
 -- config.default_prog = { "C:/Program Files/Git/bin/bash.exe" }
 
--- config.window_background_image = "C:/Users/jting/OneDrive/Pictures/Wallpapers/the-rest.png"
+-- config.window_background_image = "/home/jting/.config/the-rest.png"
 
 config.window_background_image_hsb = {
 	brightness = 0.3,
