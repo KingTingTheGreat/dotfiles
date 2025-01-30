@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font_with_fallback { 'BlexMono Nerd Font Mono Text' }
+-- config.font = wezterm.font_with_fallback { 'BlexMono Nerd Font Mono Text' }
 -- config.line_height = 0.8
 -- config.color_scheme = 'Thayer Bright'
 config.color_scheme = 'Aardvark Blue'
