@@ -35,11 +35,13 @@ webimg () {
 }
 
 info () {
-	fastfetch -l $(~/CompSciProjects/spotify-stats-cli/spotify-stats-cli.exe)
+	fastfetch -l $(/home/jting/projects/top-fetch-cli/top-fetch-cli file=out.txt pT=2 pL=2)
 }
 
 eval "$(zoxide init --cmd cd bash)"
 export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$HOME/go/bin:$PATH"
+# export PATH=$PATH:~/.cache/rebar3/bin
 
 function git_branch() {
 	git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
@@ -54,7 +56,7 @@ alias ghub='gh repo create --source=. --public && git push --set-upstream origin
 alias ls='ls -F --color'
 alias tw-init='npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p'
 alias weather='~/.config/weather.exe'
-alias todo="~/CompSciProjects/todo-cli/target/debug/todo-cli.exe"
+# alias todo="~/CompSciProjects/todo-cli/target/debug/todo-cli.exe"
 alias nrd="node --run dev"
 alias paste='powershell -command "Get-Clipboard"'
 alias mkdir='mkdir -p'
@@ -66,12 +68,22 @@ alias img="wezterm imgcat"
 alias ansi-img="~/CompSciProjects/image-ansi-converter/image-ansi-converter.exe"
 alias clip="xclip -sel clip"
 alias paste="xclip -o"
-alias air="~/go/bin/air"
+alias start="xdg-open"
+alias py="source bin/activate"
+alias json="python -m json.tool"
+# alias track="top-fetch web dim=28 pL=1 timeout=750"
+alias track="top-fetch kitty dim=280 pL=2 pT=1 timeout=750 env='~/projects/top-fetch/env/.env' backup='~/projects/top-fetch/backup.txt'"
+tailwindcss="~/tailwindcss"
 
 bind -s 'set completion-ignore-case on'
+# bind -x '"\C-l": clear'
 
-python ~/random_ascii.py
+# set -o vi
+
+# python ~/random_ascii.py
 # info
+track
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

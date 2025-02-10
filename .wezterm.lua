@@ -1,20 +1,27 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font_with_fallback { 'BlexMono Nerd Font Mono Medium' }
+config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono Medium" })
+config.font_size = 12
 -- config.line_height = 0.8
 -- config.color_scheme = 'Thayer Bright'
-config.color_scheme = 'Aardvark Blue'
+config.color_scheme = "Aardvark Blue"
+-- config.color_scheme = "catppuccin-mocha"
+--
+-- config.window_background_opacity = 0.8
 
 config.window_decorations = "RESIZE"
 
 config.initial_cols = 120
 config.initial_rows = 30
 
+config.enable_wayland = false
+
 -- config.default_prog = { "C:/Program Files/Git/bin/bash.exe" }
 
 -- config.window_background_image = "/home/jting/.config/the-rest.png"
+-- config.window_background_image = "/home/jting/boygenius-the-record.jpg"
 
 config.window_background_image_hsb = {
 	brightness = 0.3,
