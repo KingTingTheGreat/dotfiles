@@ -52,6 +52,7 @@ PS1='\[\033[94;1m\][\[\033[94;1m\]\d \t\[\033[94;1m\]] \[\033[32m\]\u \[\033[35m
 # alias wsl='winpty wsl'
 # alias winget='winpty winget'
 alias ghub='gh repo create --source=. --public && git push --set-upstream origin main'
+alias ghub-priv='gh repo create --source=. --private && git push --set-upstream origin main'
 # alias fzf='winpty fzf'
 alias ls='ls -F --color'
 alias tw-init='npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p'
@@ -61,7 +62,7 @@ alias nrd="node --run dev"
 alias paste='powershell -command "Get-Clipboard"'
 alias mkdir='mkdir -p'
 alias :q="exit"
-alias venv='python -m venv . && source Scripts/activate && printf "Include/\nLib/\nScripts/\npyvenv.cfg" >> .gitignore'
+alias venv='python -m venv . && source bin/activate && printf "Include/\nLib/\nScripts/\npyvenv.cfg" >> .gitignore'
 alias pyvercel="printf '{\n\t\"builds\": [\n\t\t{\n\t\t\t\"src\": \"/app.py\",\n\t\t\t\"use\": \"@vercel/python\"\n\t\t}\n\t],\n\t\"routes\": [\n\t\t{\n\t\t\t\"src\": \"/(.*)\",\n\t\t\t\"dest\": \"/app.py\"\n\t\t}\n\t]\n}' > vercel.json"
 alias mui="npm install @mui/material @emotion/react @emotion/styled"
 alias img="wezterm imgcat"
@@ -71,8 +72,7 @@ alias paste="xclip -o"
 alias start="xdg-open"
 alias py="source bin/activate"
 alias json="python -m json.tool"
-# alias track="top-fetch web dim=28 pL=1 timeout=750"
-alias track="top-fetch kitty dim=280 pL=2 pT=1 timeout=750 env='~/projects/top-fetch/env/.env' backup='~/projects/top-fetch/backup.txt'"
+alias track="top-fetch kitty dim=280 pL=2 pT=1 timeout=600 env='~/projects/top-fetch/env/.env' backup='~/projects/top-fetch/backup.txt' choice=5"
 tailwindcss="~/tailwindcss"
 
 bind -s 'set completion-ignore-case on'

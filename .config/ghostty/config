@@ -55,3 +55,4 @@ keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+j=goto_split:bottom
 
 font-family="BlexMono Nerd Font Mono"
+# font-size="14"
