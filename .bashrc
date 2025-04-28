@@ -41,6 +41,7 @@ info () {
 eval "$(zoxide init --cmd cd bash)"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="/opt/google/chrome:$PATH"
 # export PATH=$PATH:~/.cache/rebar3/bin
 
 function git_branch() {
