@@ -6,8 +6,8 @@ config.font = wezterm.font_with_fallback({ "BlexMono Nerd Font Mono Medium" })
 config.font_size = 12
 -- config.line_height = 0.8
 -- config.color_scheme = 'Thayer Bright'
-config.color_scheme = "Aardvark Blue"
--- config.color_scheme = "catppuccin-mocha"
+-- config.color_scheme = "Aardvark Blue"
+config.color_scheme = "catppuccin-mocha"
 --
 -- config.window_background_opacity = 0.8
 
