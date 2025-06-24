@@ -6,40 +6,35 @@ aliasRc() {
 	echo "alias $1='$2'" >> ~/.bashrc
 	src
 }
-aliasProfile () {
-	echo "alias $1='$2'" >> ~/.bash_profile
-	src
-}
 
 mkcd() {
 	mkdir $1 && cd $1
 }
 
-gpr() {
-    feature_branch=$(git rev-parse --abbrev-ref HEAD)
-    git push --set-upstream origin $feature_branch
-    gh pr create --base main --head $feature_branch --fill --web
-}
 
 copyf () {
-	cat $1 | clip
+	cat $1 | pbcopy
 }
-
-webimg () {
-	curl -s "$1" | wezterm imgcat
-}
-
-eval "$(zoxide init --cmd cd bash)"
 
 function git_branch() {
 	# git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
-	  git rev-parse --abbrev-ref HEAD 2>/dev/null
+	git rev-parse --abbrev-ref HEAD 2>/dev/null | sed -E 's/(.*)/[\1]/'
+	echo "i am git_branch" > "$HOME/delete-me"
 }
 
+gpr() {
+    branch=$(git_branch)
+    git push --set-upstream origin $branch
+    gh pr create --base main --head $branch --fill --web
+}
+
+setopt PROMPT_SUBST
 autoload -U colors
 colors
 
-PROMPT='%F{blue}[%D{%a %b %d %T}]%f %F{green}%n%f %F{magenta}%~%f %F{cyan}%(git_branch)%f
+# PROMPT='%F{blue}[%D{%a %b %d %T}]%f %F{green}%n%f %F{magenta}%~%f %F{cyan}%(git_branch)%f
+# $ '
+PS1='%F{blue}[%D{%a %b %d %T}]%f %F{green}%n%f %F{magenta}%~%f %F{cyan}$(git_branch)%f
 $ '
 # PS1='\[\033[94;1m\][\[\033[94;1m\]\d \t\[\033[94;1m\]] \[\033[32m\]\u \[\033[35m\]\w\[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
 # PS1='$ '
@@ -79,6 +74,7 @@ tailwindcss="~/tailwindcss"
 # info
 # track
 
+eval "$(zoxide init zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
