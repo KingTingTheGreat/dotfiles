@@ -32,10 +32,17 @@ webimg () {
 eval "$(zoxide init --cmd cd bash)"
 
 function git_branch() {
-	git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+	# git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+	  git rev-parse --abbrev-ref HEAD 2>/dev/null
 }
+
+autoload -U colors
+colors
+
+PROMPT='%F{blue}[%D{%a %b %d %T}]%f %F{green}%n%f %F{magenta}%~%f %F{cyan}%(git_branch)%f
+$ '
 # PS1='\[\033[94;1m\][\[\033[94;1m\]\d \t\[\033[94;1m\]] \[\033[32m\]\u \[\033[35m\]\w\[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
-PS1='$ '
+# PS1='$ '
 
 # alias python='winpty python'
 # alias wsl='winpty wsl'
@@ -60,17 +67,17 @@ alias paste="xclip -o"
 alias start="xdg-open"
 alias py="source bin/activate"
 alias json="python -m json.tool"
-alias track="top-fetch kitty dim=280 pL=2 pT=1 timeout=600 env='~/projects/top-fetch/env/.env' backup='~/projects/top-fetch/backup.txt' choice=5"
+# alias track="top-fetch kitty dim=280 pL=2 pT=1 timeout=600 env='~/projects/top-fetch/env/.env' backup='~/projects/top-fetch/backup.txt' choice=5"
 tailwindcss="~/tailwindcss"
 
-bind -s 'set completion-ignore-case on'
+# bind -s 'set completion-ignore-case on'
 # bind -x '"\C-l": clear'
 
 # set -o vi
 
 # python ~/random_ascii.py
 # info
-track
+# track
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -80,4 +87,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
